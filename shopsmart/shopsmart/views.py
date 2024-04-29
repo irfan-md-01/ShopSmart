@@ -50,6 +50,38 @@ def search(request):
         d[f"url{i}"] = "https://www.flipkart.com" + urls[i]
         i += 1
 
+    # print(i)
+    # --------- ** ebay  ** ---------------
+    ebay = f"https://www.ebay.com/sch/i.html?_nkw={word}&"
+    r2 = requests.get(ebay, headers=headers)
+    soup2 = BeautifulSoup(r2.text, "html.parser")
+    product_containers = soup2.find_all('div', class_='s-item__info')
+
+    for container in product_containers:
+        if (i == 6):
+            i += 1
+            continue
+        name = container.find('div', class_='s-item__title').text.strip()
+        price = container.find('span', class_='s-item__price').text.strip()
+        link = container.find('a', class_='s-item__link')['href']
+        d[f"title{i}"] = name
+        d[f"url{i}"] = link
+        if("to" in price ):
+            l =price.split("to")
+            print(l)
+            x = round(( float(l[0][1:]) + float(l[-1][2:]))/2 ,2)
+            d[f"price{i}"] = "₹" + str(x)
+        else :
+            d[f"price{i}"] = "₹" + str(round((float(price[1:])) * 83.43, 2))
+
+        # print(name)
+        # print
+        # print(link)
+        if (i == 10): break
+        i += 1
+
+
+
     # print(d)
     # --------- ** amazon  ** ---------------
     # titles = []

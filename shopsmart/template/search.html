@@ -1,6 +1,10 @@
 {% extends 'basic.html' %}
 {% block title %} Search Smart{% endblock %}
-{% block body %} <br> <h4>Top Result...</h4>
+{% block body %}
+<div class="alert alert-success" role="alert">
+  Successful, following are the top products available —check it out!
+</div>
+
 <br>
 
 <!--1-->
@@ -69,9 +73,49 @@
   </div>
 </div>
 
+<!--4-->
+<div class="row">
+  <div class="col-sm-6 ml-3 mb-3 mb-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{title7}}}</h5>
+        <p class="card-text">{{price7 }}</p>
+        <a href="{{url7}}" class="btn btn-primary">Ebay</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{title8}}</h5>
+        <p class="card-text">{{price8 }}</p>
+        <a href="{{url7}}" class="btn btn-primary">Ebay</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-
+<!--5-->
+<div class="row">
+  <div class="col-sm-6 ml-3 mb-3 mb-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{title9}}}</h5>
+        <p class="card-text">{{price9 }}</p>
+        <a href="{{url9}}" class="btn btn-primary">Ebay</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{title10}}</h5>
+        <p class="card-text">{{price10 }}</p>
+        <a href="{{url10}}" class="btn btn-primary">Ebay</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!--<a href="{{url0}}">-->
 <!--<h3> {{ title0 }}</h3>-->
