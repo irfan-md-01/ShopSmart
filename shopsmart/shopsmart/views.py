@@ -53,7 +53,8 @@ def search(request):
     # print(i)
     # --------- ** ebay  ** ---------------
     ebay = f"https://www.ebay.com/sch/i.html?_nkw={word}&"
-    r2 = requests.get(ebay, headers=headers)
+    headers2 = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0'}
+    r2 = requests.get(ebay, headers=headers2)
     soup2 = BeautifulSoup(r2.text, "html.parser")
     product_containers = soup2.find_all('div', class_='s-item__info')
 
